@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0FC4BD72-6AAC-475F-89F9-157325A64077}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{81D0E9E2-770F-441D-BDC5-A2D5328BB259}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9A9B6E2A-DF9A-406C-BA56-AB0F2007C843}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{650446BA-551B-40F4-A1A4-F3B09395AB3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{4F40C8EC-D6D1-444A-BA40-61E81D583050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Core.Domain", "Dasigno.Demokrata.Core.Domain\Dasigno.Demokrata.Core.Domain.csproj", "{387FB07C-CBF1-4768-BC7C-D225574A3196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Core.Application", "Dasigno.Demokrata.Core.Application\Dasigno.Demokrata.Core.Application.csproj", "{B079A728-1A3E-4C73-ABB8-48E16011FD2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Infrastructure.DataAccess", "Dasigno.Demokrata.Infrastructure.DataAccess\Dasigno.Demokrata.Infrastructure.DataAccess.csproj", "{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Presentation.WebApi", "Dasigno.Demokrata.Presentation.WebApi\Dasigno.Demokrata.Presentation.WebApi.csproj", "{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{387FB07C-CBF1-4768-BC7C-D225574A3196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387FB07C-CBF1-4768-BC7C-D225574A3196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387FB07C-CBF1-4768-BC7C-D225574A3196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387FB07C-CBF1-4768-BC7C-D225574A3196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B079A728-1A3E-4C73-ABB8-48E16011FD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B079A728-1A3E-4C73-ABB8-48E16011FD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B079A728-1A3E-4C73-ABB8-48E16011FD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B079A728-1A3E-4C73-ABB8-48E16011FD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A9B6E2A-DF9A-406C-BA56-AB0F2007C843} = {0FC4BD72-6AAC-475F-89F9-157325A64077}
+		{650446BA-551B-40F4-A1A4-F3B09395AB3A} = {0FC4BD72-6AAC-475F-89F9-157325A64077}
+		{4F40C8EC-D6D1-444A-BA40-61E81D583050} = {0FC4BD72-6AAC-475F-89F9-157325A64077}
+		{387FB07C-CBF1-4768-BC7C-D225574A3196} = {9A9B6E2A-DF9A-406C-BA56-AB0F2007C843}
+		{B079A728-1A3E-4C73-ABB8-48E16011FD2D} = {9A9B6E2A-DF9A-406C-BA56-AB0F2007C843}
+		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC} = {650446BA-551B-40F4-A1A4-F3B09395AB3A}
+		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA} = {4F40C8EC-D6D1-444A-BA40-61E81D583050}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1553B63-0BEB-4215-B0C4-C0984709414D}
+	EndGlobalSection
+EndGlobal

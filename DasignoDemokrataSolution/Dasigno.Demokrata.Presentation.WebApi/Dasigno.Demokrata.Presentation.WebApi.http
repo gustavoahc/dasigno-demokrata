@@ -1,0 +1,6 @@
+@Dasigno.Demokrata.Presentation.WebApi_HostAddress = http://localhost:5276
+
+GET {{Dasigno.Demokrata.Presentation.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
