@@ -15,6 +15,8 @@ namespace Dasigno.Demokrata.Infrastructure.DataAccess.Persistence
 
         public async Task<List<User>> GetAllAsync() => await _context.Users.ToListAsync();
 
+        public async Task<User> GetByIdAsync(int id) => await _context.Users.FindAsync(id);
+
         public async Task<User> InsertAsync(User user)
         {
             await _context.Users.AddAsync(user);

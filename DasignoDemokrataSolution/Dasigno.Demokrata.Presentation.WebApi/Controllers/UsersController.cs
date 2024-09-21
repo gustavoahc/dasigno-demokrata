@@ -35,6 +35,21 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Controllers
             var newUser = await _userService.InsertUserAsync(MappingConfiguration.ConvertUser(_mapper, userRequestModel));
             UserResponseModel userResponseModel = MappingConfiguration.ConvertUser(_mapper, newUser);
 
+            return new CreatedAtRouteResult("GetUser", new { id = userResponseModel.Id }, userResponseModel);
+        }
+
+        [HttpGet("{id}", Name = "GetUser")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var user = await _userService.GetUserAsync(id);
+
+            if (user is null)
+            {
+                return NotFound();
+            }
+
+            UserResponseModel userResponseModel = MappingConfiguration.ConvertUser(_mapper
+                , user);
             return Ok(userResponseModel);
         }
     }

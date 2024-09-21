@@ -13,6 +13,8 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
 
         public async Task<List<User>> GetUsersAsync() => await _userRepository.GetAllAsync();
 
+        public async Task<User> GetUserAsync(int id) => await _userRepository.GetByIdAsync(id);
+
         public async Task<User> InsertUserAsync(User user)
         {
             user.CreationDate = DateTime.Now;
