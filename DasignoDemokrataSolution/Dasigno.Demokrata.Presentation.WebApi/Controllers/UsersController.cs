@@ -44,6 +44,15 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Controllers
             return Ok(userResponseModel);
         }
 
+        [HttpGet("search/{text}/{pageNumber}/{pageSize}")]
+        public async Task<IActionResult> Search(string text, int pageNumber, int pageSize)
+        {
+            List<UserResponseModel> users = MappingConfiguration.ConvertListUsers(_mapper,
+                await _userService.SearchUsersAsync(text, pageNumber, pageSize));
+
+            return Ok(users);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserCreationRequestModel userRequestModel)
         {

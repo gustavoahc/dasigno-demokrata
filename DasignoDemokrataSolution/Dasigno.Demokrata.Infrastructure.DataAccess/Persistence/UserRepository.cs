@@ -36,5 +36,16 @@ namespace Dasigno.Demokrata.Infrastructure.DataAccess.Persistence
             _context.Remove(user);
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<List<User>> SearchAsync(string text, int pageNumber, int pageSize)
+        {
+            IQueryable<User> queryUsers = _context.Users.Where(n => n.FirstName.Contains(text)
+            || n.LastName.Contains(text));
+
+            return await queryUsers
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
     }
 }

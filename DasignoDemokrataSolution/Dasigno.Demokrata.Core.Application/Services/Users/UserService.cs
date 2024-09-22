@@ -73,6 +73,16 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
             }
         }
 
+        public async Task<List<User>> SearchUsersAsync(string text, int pageNumber, int pageSize)
+        {
+            if (String.IsNullOrEmpty(text))
+            {
+                return await GetUsersAsync();
+            }
+
+            return await _userRepository.SearchAsync(text, pageNumber, pageSize);
+        }
+
         private async Task<User> GetUser(int id) => await _userRepository.GetByIdAsync(id);
 
         private static async Task ValidateUserAsync(User user)

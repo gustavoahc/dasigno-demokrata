@@ -13,5 +13,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
         Task<int> UpdateAsync(User user);
 
         Task<int> DeleteAsync(User user);
+
+        Task<List<User>> SearchAsync(string text, int pageNumber, int pageSize);
     }
 }
