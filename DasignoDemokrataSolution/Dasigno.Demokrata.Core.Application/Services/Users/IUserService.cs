@@ -9,5 +9,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
         Task<User> GetUserAsync(int id);
 
         Task<User> InsertUserAsync(User user);
+
+        Task<User> UpdateUserAsync(User user);
     }
 }

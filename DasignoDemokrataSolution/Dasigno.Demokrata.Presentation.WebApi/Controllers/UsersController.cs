@@ -30,7 +30,7 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] UserRequestModel userRequestModel)
+        public async Task<IActionResult> Post([FromBody] UserCreationRequestModel userRequestModel)
         {
             var newUser = await _userService.InsertUserAsync(MappingConfiguration.ConvertUser(_mapper, userRequestModel));
             UserResponseModel userResponseModel = MappingConfiguration.ConvertUser(_mapper, newUser);
@@ -51,6 +51,17 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Controllers
             UserResponseModel userResponseModel = MappingConfiguration.ConvertUser(_mapper
                 , user);
             return Ok(userResponseModel);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UserUpdateRequestModel userRequestModel)
+        {
+            var user = await _userService.UpdateUserAsync(MappingConfiguration.ConvertUser(_mapper, userRequestModel));
+            if (user is null)
+            {
+                return NotFound();
+            }
+            return NoContent();
         }
     }
 }

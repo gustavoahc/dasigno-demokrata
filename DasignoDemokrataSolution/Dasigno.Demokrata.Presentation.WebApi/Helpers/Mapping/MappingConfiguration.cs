@@ -10,7 +10,8 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Helpers.Mapping
         public MappingConfiguration()
         {
             CreateMap<User, UserResponseModel>().ReverseMap();
-            CreateMap<User, UserRequestModel>().ReverseMap();
+            CreateMap<User, UserCreationRequestModel>().ReverseMap();
+            CreateMap<User, UserUpdateRequestModel>().ReverseMap();
         }
 
         public static List<UserResponseModel> ConvertListUsers(IMapper mapper, List<User> users)
@@ -18,7 +19,12 @@ namespace Dasigno.Demokrata.Presentation.WebApi.Helpers.Mapping
             return mapper.Map<List<UserResponseModel>>(users);
         }
 
-        public static User ConvertUser(IMapper mapper, UserRequestModel userModel)
+        public static User ConvertUser(IMapper mapper, UserCreationRequestModel userModel)
+        {
+            return mapper.Map<User>(userModel);
+        }
+
+        public static User ConvertUser(IMapper mapper, UserUpdateRequestModel userModel)
         {
             return mapper.Map<User>(userModel);
         }
