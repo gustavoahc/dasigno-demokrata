@@ -30,5 +30,11 @@ namespace Dasigno.Demokrata.Infrastructure.DataAccess.Persistence
             _context.Entry(user).State = EntityState.Modified;
             return await _context.SaveChangesAsync();
         }
+
+        public async Task<int> DeleteAsync(User user)
+        {
+            _context.Remove(user);
+            return await _context.SaveChangesAsync();
+        }
     }
 }

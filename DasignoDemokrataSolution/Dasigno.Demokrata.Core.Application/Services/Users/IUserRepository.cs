@@ -11,5 +11,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
         Task<User> InsertAsync(User user);
 
         Task<int> UpdateAsync(User user);
+
+        Task<int> DeleteAsync(User user);
     }
 }

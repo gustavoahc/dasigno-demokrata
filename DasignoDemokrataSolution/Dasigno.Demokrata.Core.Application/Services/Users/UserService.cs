@@ -29,6 +29,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
             {
                 return currentUser;
             }
+
             user.CreationDate = currentUser.CreationDate;
             user.ModificationDate = DateTime.Now;
             int updateResult = await _userRepository.UpdateAsync(user);
@@ -39,7 +40,25 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
             else
             {
                 return null;
-                //throw exception de que no se pudo actualizar el usuario
+            }
+        }
+
+        public async Task<User> DeleteUserAsync(int id)
+        {
+            User currentUser = await GetUser(id);
+            if (currentUser is null)
+            {
+                return currentUser;
+            }
+
+            int deleteResult = await _userRepository.DeleteAsync(currentUser);
+            if (deleteResult > 0)
+            {
+                return currentUser;
+            }
+            else
+            {
+                return null;
             }
         }
 
