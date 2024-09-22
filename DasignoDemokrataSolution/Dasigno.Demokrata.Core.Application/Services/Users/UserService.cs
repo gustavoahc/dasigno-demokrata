@@ -1,14 +1,19 @@
-﻿using Dasigno.Demokrata.Core.Domain.Entities;
+﻿using Dasigno.Demokrata.Core.Application.Parameters.Messages;
+using Dasigno.Demokrata.Core.Domain.Entities;
+using Dasigno.Demokrata.Core.Domain.Exceptions.UserExceptions;
+using Microsoft.Extensions.Options;
 
 namespace Dasigno.Demokrata.Core.Application.Services.Users
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly DatabaseMessages _messages;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IOptions<DatabaseMessages> messages)
         {
             _userRepository = userRepository;
+            _messages = messages.Value;
         }
 
         public async Task<List<User>> GetUsersAsync() => await _userRepository.GetAllAsync();
@@ -17,8 +22,13 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
 
         public async Task<User> InsertUserAsync(User user)
         {
+            await ValidateUserAsync(user);
             user.CreationDate = DateTime.Now;
             User insertUser = await _userRepository.InsertAsync(user);
+            if (insertUser is null || insertUser.Id <= 0)
+            {
+                throw new UserDatabaseException(_messages.InsertingErrorMessage);
+            }
             return insertUser;
         }
 
@@ -30,6 +40,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
                 return currentUser;
             }
 
+            await ValidateUserAsync(user);
             user.CreationDate = currentUser.CreationDate;
             user.ModificationDate = DateTime.Now;
             int updateResult = await _userRepository.UpdateAsync(user);
@@ -39,7 +50,7 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
             }
             else
             {
-                return null;
+                throw new UserDatabaseException(_messages.UpdatingErrorMessage);
             }
         }
 
@@ -58,10 +69,20 @@ namespace Dasigno.Demokrata.Core.Application.Services.Users
             }
             else
             {
-                return null;
+                throw new UserDatabaseException(_messages.DeletingErrorMessage);
             }
         }
 
         private async Task<User> GetUser(int id) => await _userRepository.GetByIdAsync(id);
+
+        private static async Task ValidateUserAsync(User user)
+        {
+            UserValidator userValidation = new UserValidator();
+            var validationResult = await userValidation.ValidateAsync(user);
+            if (!validationResult.IsValid)
+            {
+                throw new UserValidationException(validationResult.Errors);
+            }
+        }
     }
 }

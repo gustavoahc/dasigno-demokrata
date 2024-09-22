@@ -4,13 +4,13 @@
     {
         public int Id { get; set; }
 
-        public string FirstName { get; set; } = string.Empty;
+        public string FirstName { get; set; } = String.Empty;
 
-        public string MiddleName { get; set; } = string.Empty;
+        public string MiddleName { get; set; } = String.Empty;
 
-        public string LastName { get; set; } = string.Empty;
+        public string LastName { get; set; } = String.Empty;
 
-        public string SurName { get; set; } = string.Empty;
+        public string SurName { get; set; } = String.Empty;
 
         public DateOnly BirthDate { get; set; }
 

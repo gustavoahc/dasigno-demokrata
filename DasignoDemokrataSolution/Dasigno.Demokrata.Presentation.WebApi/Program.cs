@@ -1,7 +1,9 @@
 using AutoMapper;
 using Dasigno.Demokrata.Core.Application;
+using Dasigno.Demokrata.Core.Application.Parameters.Messages;
 using Dasigno.Demokrata.Infrastructure.DataAccess;
 using Dasigno.Demokrata.Infrastructure.DataAccess.Persistence;
+using Dasigno.Demokrata.Presentation.WebApi.Helpers.ErrorHandling;
 using Dasigno.Demokrata.Presentation.WebApi.Helpers.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -17,6 +19,8 @@ var mappingConfig = new MapperConfiguration(mc =>
 IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+builder.Services.Configure<DatabaseMessages>(builder.Configuration.GetSection(nameof(DatabaseMessages)));
+
 string connectionString = builder.Configuration.GetConnectionString("DemokrataDatabase")!;
 
 // Add services to the container.
@@ -24,7 +28,10 @@ builder.Services.AddDataAccessServices(connectionString)
     .AddApplicationServices();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalErrorHandlingAttribute>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
