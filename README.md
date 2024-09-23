@@ -3,6 +3,7 @@
 Repositorio de código de REST API para prueba técnica en .NET 8 para Dasigno
 
 ## Arquitectura (Clean Architecture)
+![Dasigno-Architecture](https://github.com/user-attachments/assets/d9c1c964-ca8e-4483-997a-e3cbbf3cd811)
 
 La arquitectura implementada en el desarrollo de la prueba técnica fue Clean Architecture (Arquitectura Limpia). Dentro de los patrones y buenas prácticas implementadas en el desarrollo de la prueba se aplicaron los patrones **Repository** y **Options**, así como buenas prácticas como **Dependency Injection**, **Separation of Concerns**, **Single Responsibility**, estándar de nombres, uso correcto de los códigos de respuesta HTTP y en general los principios **SOLID** para tener un código limpio. También se implementó la captura global de errores por medio de un filtro (**GlobalErrorHandlingAttribute**)
 
