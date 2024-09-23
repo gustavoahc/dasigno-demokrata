@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{4F40C8EC-D6D1-444A-BA40-61E81D583050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Core.Domain", "Dasigno.Demokrata.Core.Domain\Dasigno.Demokrata.Core.Domain.csproj", "{387FB07C-CBF1-4768-BC7C-D225574A3196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasigno.Demokrata.Core.Domain", "Dasigno.Demokrata.Core.Domain\Dasigno.Demokrata.Core.Domain.csproj", "{387FB07C-CBF1-4768-BC7C-D225574A3196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Core.Application", "Dasigno.Demokrata.Core.Application\Dasigno.Demokrata.Core.Application.csproj", "{B079A728-1A3E-4C73-ABB8-48E16011FD2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasigno.Demokrata.Core.Application", "Dasigno.Demokrata.Core.Application\Dasigno.Demokrata.Core.Application.csproj", "{B079A728-1A3E-4C73-ABB8-48E16011FD2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Infrastructure.DataAccess", "Dasigno.Demokrata.Infrastructure.DataAccess\Dasigno.Demokrata.Infrastructure.DataAccess.csproj", "{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasigno.Demokrata.Infrastructure.DataAccess", "Dasigno.Demokrata.Infrastructure.DataAccess\Dasigno.Demokrata.Infrastructure.DataAccess.csproj", "{32D7846C-A31F-4423-8B27-0D77B4D6B6AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.Presentation.WebApi", "Dasigno.Demokrata.Presentation.WebApi\Dasigno.Demokrata.Presentation.WebApi.csproj", "{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasigno.Demokrata.Presentation.WebApi", "Dasigno.Demokrata.Presentation.WebApi\Dasigno.Demokrata.Presentation.WebApi.csproj", "{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasigno.Demokrata.UnitTesting", "Dasigno.Demokrata.UnitTesting\Dasigno.Demokrata.UnitTesting.csproj", "{6884306A-2ADB-4901-834E-6BDFF1D340CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6884306A-2ADB-4901-834E-6BDFF1D340CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6884306A-2ADB-4901-834E-6BDFF1D340CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6884306A-2ADB-4901-834E-6BDFF1D340CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6884306A-2ADB-4901-834E-6BDFF1D340CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{B079A728-1A3E-4C73-ABB8-48E16011FD2D} = {9A9B6E2A-DF9A-406C-BA56-AB0F2007C843}
 		{32D7846C-A31F-4423-8B27-0D77B4D6B6AC} = {650446BA-551B-40F4-A1A4-F3B09395AB3A}
 		{ABA560FA-FC18-4D6E-9E8E-FE0FBDB229FA} = {4F40C8EC-D6D1-444A-BA40-61E81D583050}
+		{6884306A-2ADB-4901-834E-6BDFF1D340CB} = {81D0E9E2-770F-441D-BDC5-A2D5328BB259}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1553B63-0BEB-4215-B0C4-C0984709414D}
